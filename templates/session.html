@@ -1,0 +1,18 @@
+{% extends "squelette.html" %}
+{% block header %}
+    {{super()}}
+    <link href="{{ url_for('static',filename='mon_style.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block titre %}Page de contact{% endblock %}
+
+{% block corps %}
+    <h1>{{self.titre()}}</h1>
+    <p>Indiquez-moi votre pseudo</p>
+    <form action="" method="post">
+        <input type="text" name="pseudo" value="" />
+        <input type="submit" value="Envoyer" />
+    </form>
+{% endblock %}
+{% block footer %}
+    <footer>Copyright jpmv 2018</footer>
+{% endblock %}

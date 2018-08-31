@@ -1,0 +1,92 @@
+{%include "header.html" %}
+    <body>
+        <h1>{{titre}}</h1>
+        <h2>request.method : {{request.method}}</h2>
+        <h2>il est : {{la_date}}</h2>
+        <ul>
+            {% for mot in mots %}
+                <li>{{mot}}</li>
+            {% endfor %}
+        </ul>
+        <ul>
+            {% with menu=["accueil","news","contact"] %}
+                {% for item in menu %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            {% endwith %}
+        </ul>
+        <ul>
+            {% set menu=["toto","tata","tutu"] %}
+            {% for item in menu %}
+                <li>{{item}}</li>
+            {% endfor %}
+            
+        </ul>
+        <ul>
+            {% set menu=["toto","tata","tutu"] %}
+            <p>les valeurs en sens inverse</p>
+            {% for item in menu|reverse %}
+                <li>{{item}}</li>
+            {% endfor %}
+            
+        </ul>
+        
+        {% set menu=["toto","tata","tutu","toto","tata","tutu","toto","tata","tutu","toto","tata","tutu"] %}
+        {% if menu|length > 10 %}
+            <p>Les 10 premiers item du menu :</p>
+            <ul>
+                {% for i in range(10) %}
+                    <li>{{menu[i]}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Vous devez entrer au moins 10 item dans le menu</p>
+        {% endif %}
+            
+        
+        <ul>
+            {% set menu=["toto","tata","tutu"] %}
+            <p>les valeurs avec la première lettre en majuscule</p>
+            {% for item in menu %}
+                <li>{{item|capitalize}}</li>
+            {% endfor %}
+            
+        </ul>
+        <h3>{{["Salut","les","Zéros"]|join("youpi")}}</h3>
+        <h3>{{["Salut","les","Zéros"]|join(" ")}}</h3>
+        {% set div="5" %}
+        {% if age is defined %}
+            age est défini et vaut {{age}} ans
+        {% endif %}
+        {% if age|int is divisibleby(div|int) %}
+            age est divisible par {{div}}
+        {% else %}
+            age n'est pas divisible par {{div}}
+        {% endif %}
+        <p>
+            {% if age|int < 18%}
+                Acces non autorisé aux mineurs
+            {% elif age|int < 90%}
+                OK, enjoy !
+            {% else %}
+                OK, mais doucement !
+            {% endif %}
+        </p>
+        <p>La distance : {{format_dist(dist)}} </p>
+        <p>La distance : {{dist|format_dist}} </p>
+        {% if nombre is impair %}
+            <p>le nombre {{nombre}} est impair</p>
+        {% else %}
+            <p>le nombre {{nombre}} est pair</p>
+        {% endif %}
+        <div class="container">
+          <div class="jumbotron">
+            <h1>Bootstrap Tutorial</h1> 
+            <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
+            responsive, mobile-first projects on the web.</p> 
+          </div>
+          <p>This is some text.</p> 
+          <p>This is another text.</p> 
+        </div>
+    </body>
+</html>

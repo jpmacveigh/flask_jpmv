@@ -1,0 +1,4 @@
+Installer Flask :
+    
+    sudo apt-get update
+    sudo pip install flask

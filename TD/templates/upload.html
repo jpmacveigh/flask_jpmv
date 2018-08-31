@@ -1,0 +1,14 @@
+{% extends "squelette_td.html" %}
+{% block header %}
+    {{super()}}
+{% endblock %}
+{% block corps %}  
+    <p>Envoyer-moi une image en remplissant ce formulaire</p>
+    <div class="container">
+    <form class="form-inline" action="" method="post" enctype="multipart/form-data">
+        <input class="form-control" type="file" name="uploaded" pattern="([^\s]+(\.(?i)(jpg|png|jpeg))$)" value="Votre fichier (png, jpg ou jpeg uniquement)" />
+        <input type="submit" value="Envoyer" />
+    </form>
+    </div>
+{% endblock %}   
+</html>

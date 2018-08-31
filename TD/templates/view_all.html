@@ -1,0 +1,13 @@
+{% extends "squelette_td.html" %}
+{% block header %}
+    {{super()}}
+{% endblock %}
+{% block corps %}  
+    <h1>Liste des images uploadées (cliquez pour visualiser)</h1>
+    <div class="list-group">
+      {% for picture_name in list %}
+            <a href="/view/{{picture_name}}" class="list-group-item">{{picture_name}}</a>
+      {% endfor %}
+    </div>
+{% endblock %}   
+</html>

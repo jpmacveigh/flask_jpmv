@@ -1,0 +1,18 @@
+{% extends "squelette.html" %}
+{% block header %}
+    {{super()}}
+    <link href="{{ url_for('static',filename='mon_style.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block titre %}Page d'upload{% endblock %}
+
+{% block corps %}
+    <h1>{{self.titre()}}</h1>
+    <p>Envoyer-moi un fichier en remplissant ce formulaire</p>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploaded" value="Votre fichier" />
+        <input type="submit" value="Envoyer" />
+    </form>
+{% endblock %}
+{% block footer %}
+    <footer>Copyright jpmv 2018</footer>
+{% endblock %}
