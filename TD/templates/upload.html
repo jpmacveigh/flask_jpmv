@@ -6,9 +6,9 @@
     <p>Envoyer-moi une image en remplissant ce formulaire</p>
     <div class="container">
     <form class="form-inline" action="" method="post" enctype="multipart/form-data">
-        <input class="form-control" type="file" name="uploaded" pattern="([^\s]+(\.(?i)(jpg|png|jpeg))$)" value="Votre fichier (png, jpg ou jpeg uniquement)" />
+        <input class="form-control" type="file" name="uploaded" accept="image/jpg, image/jpeg, image/png"  value="Votre fichier (png, jpg ou jpeg uniquement)" />
         <input type="submit" value="Envoyer" />
     </form>
     </div>
-{% endblock %}   
+{% endblock %} 
 </html>
