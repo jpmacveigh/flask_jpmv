@@ -28,7 +28,7 @@ def affiche_image(nom_image):
 @app.route("/up",methods=["GET","POST"])
 def upload():
     if request.method=="POST":
-        chaine=u"Vous avez tenté d'envoyer le fichier : {nom}".format(nom=request.files["uploaded"].filename)
+        chaine=u"Vous avez envoyé le fichier : {nom}".format(nom=request.files["uploaded"].filename)
         flash(chaine)
         fichier = request.files["uploaded"]
         nom_fichier=fichier.filename
